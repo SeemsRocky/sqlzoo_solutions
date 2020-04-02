@@ -1,4 +1,5 @@
-/*1.
+/*
+1.
 Read the notes about this table. Observe the result of running this SQL command to show the name, continent and population of all countries.
 */
 
@@ -81,7 +82,8 @@ SELECT name, population, area
 FROM world
 WHERE area > 3000000 XOR population > 250000000
 
-/*Rounding
+/*
+Rounding
 9.
 Show the name and population in millions and the GDP in billions for the countries of the continent 'South America'. Use the ROUND function to show the values to two decimal places.
 
@@ -93,7 +95,8 @@ SELECT name, ROUND(population/1000000,2), ROUND(GDP/1000000000,2)
 FROM world
 WHERE continent = 'South America' 
 
-/*Trillion dollar economies
+/*
+Trillion dollar economies
 10.
 Show the name and per-capita GDP for those countries with a GDP of at least one trillion (1000000000000; that is 12 zeros). Round this value to the nearest 1000.
 
@@ -104,7 +107,8 @@ SELECT name, ROUND(gdp/population,-3)
 FROM world
 WHERE gdp > 1000000000000;
 
-/*Name and capital have the same length
+/*
+Name and capital have the same length
 11.
 Greece has capital Athens.
 
@@ -114,11 +118,13 @@ Show the name and capital where the name and the capital have the same number of
 
 You can use the LENGTH function to find the number of characters in a string
 */
+
 SELECT name, capital
 FROM world
 WHERE LENGTH(name) = LENGTH(capital)
 
-/*Matching name and capital
+/*
+Matching name and capital
 12.
 The capital of Sweden is Stockholm. Both words start with the letter 'S'.
 
@@ -131,7 +137,8 @@ SELECT name, capital
 FROM world
 WHERE LEFT(name,1) = LEFT(capital,1) AND NOT name = capital
 
-/*All the vowels
+/*
+All the vowels
 13.
 Equatorial Guinea and Dominican Republic have all of the vowels (a e i o u) in the name. They don't count because they have more than one word in the name.
 
@@ -144,4 +151,4 @@ The query shown misses countries like Bahamas and Belarus because they contain a
 SELECT name
    FROM world
 WHERE name NOT LIKE '% %' 
-AND name REGEXP '^[aeiou]' ;
+AND name REGEXP '^[aeiou]' 
